@@ -9,9 +9,22 @@ var database;
 var form, player, game;
 
 var cars, car1, car2, car3, car4;
+var track,car1_img,car2_img,car3_img,car4_img;
+
+function preload(){
+  
+  track=loadImage("images/track.jpg");
+  car1=loadImage("images/car1.png");
+  car2=loadImage("images/car2.png");
+  car3=loadImage("images/car3.png");
+  car4=loadImage("images/car4.png");
 
 
+
+
+}
 function setup(){
+  
   canvas = createCanvas(displayWidth - 20, displayHeight-30);
   database = firebase.database();
   game = new Game();
@@ -26,6 +39,13 @@ function draw(){
   }
   if(gameState === 1){
     clear();
-    game.play();
+    game.play()
   }
+
+    
+  if(gameState === 2){
+    game.end();
+
+  }
+  
 }
